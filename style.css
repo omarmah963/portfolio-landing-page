@@ -10,18 +10,20 @@
 }
 body {
   height: 100vh;
-  background-image: url('images/me.jpg');
+  background-image: url("images/me.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right ;
+  background-position: right;
 }
 .header {
+  position: fixed;
   width: 100%;
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid var(--main);
+  z-index: 100;
 }
 .first {
   width: 50%;
@@ -33,7 +35,11 @@ body {
   font-weight: bold;
   font-size: 30px;
   margin-left: 50px;
-  cursor: pointer;
+  cursor: default;
+  transition: 0.3s ease-out;
+}
+.header h3:hover {
+  transform: translateX(10px);
 }
 .header span {
   color: var(--main);
@@ -83,14 +89,27 @@ body {
   outline: none;
   border-radius: 10px;
   padding: 10px;
-  margin-right: 20px;
+  margin-right: 50px;
   cursor: pointer;
+  transition: 0.3s;
+}
+.header .btn:hover {
+  color: var(--main);
+  background-color: transparent;
+  border: 2px solid var(--main);
 }
 .content {
-  width: 410px;
-  position: relative;
-  top: 20%;
-  left: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10%;
+  height: 100vh;
+}
+img {
+  width: 50%;
+}
+.content div {
+  width: 50%;
 }
 .content h1 {
   font-size: 40px;
@@ -106,16 +125,16 @@ body {
   color: gray;
   font-size: 17px;
   margin-bottom: 20px;
+  width: 300px;
 }
 .buttons {
-  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 1em;
 }
 .buttons .one {
-  width: 138px;
-  height: 46px;
+  padding: 10px;
   font-size: 17px;
   font-weight: bold;
   color: white;
@@ -123,10 +142,15 @@ body {
   border: none;
   outline: none;
   border-radius: 10px;
+  transition: 0.3s;
+}
+.buttons .one:hover {
+  background-color: white;
+  color: var(--main);
+  border: 2px solid var(--main);
 }
 .buttons .two {
-  width: 138px;
-  height: 46px;
+  
   font-size: 17px;
   color: var(--main);
   padding: 6px;
@@ -134,24 +158,30 @@ body {
   border: 2px solid var(--main);
   outline: none;
   border-radius: 10px;
+  transition: 0.3s;
+}
+.buttons .two:hover {
+  background-color: var(--main);
+  color: white;
 }
 .social {
-    position: absolute;
-    bottom: 24px;
-    left: 19%;
-    margin-bottom: 20px;
+  position: absolute;
+  bottom: 24px;
+  left: 19%;
+  margin-bottom: 20px;
 }
 .social i {
-    font-size: 25px;
-    margin-left: 20px;
-color:white;
-background-color: var(--main);
-padding: 7px;
-border-radius: 50%;
-border: 1px solid white;
-outline: 1px solid var(--main);
-transition: .4s ease;
+  font-size: 25px;
+  margin-left: 20px;
+  color: white;
+  background-color: var(--main);
+  padding: 7px;
+  border-radius: 50%;
+  border: 1px solid white;
+  outline: 1px solid var(--main);
+  transition: 0.4s ease;
 }
 .social i:hover {
-font-size: 30px;
+  font-size: 30px;
+  transform: translateY(-10px);
 }
